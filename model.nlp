@@ -1,0 +1,417 @@
+{
+  "settings": {
+    "languages": [
+      "es"
+    ],
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "es"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "es": {
+        "settings": {
+          "locale": "es",
+          "trainByDomain": false,
+          "tag": "domain-manager-es",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "buen,dia": {
+            "intent": "saludo",
+            "domain": "default"
+          },
+          "buen,tard": {
+            "intent": "saludo",
+            "domain": "default"
+          },
+          "buen,noch": {
+            "intent": "saludo",
+            "domain": "default"
+          },
+          "hol": {
+            "intent": "saludo",
+            "domain": "default"
+          },
+          "como,esta,hey,man": {
+            "intent": "saludo",
+            "domain": "default"
+          },
+          "adi": {
+            "intent": "despedida",
+            "domain": "default"
+          },
+          "hast,manan": {
+            "intent": "despedida",
+            "domain": "default"
+          },
+          "bien,estar,que": {
+            "intent": "despedida",
+            "domain": "default"
+          },
+          "dia,feliz": {
+            "intent": "despedida",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "saludo": "default",
+          "despedida": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "Buen día",
+            "intent": "saludo"
+          },
+          {
+            "domain": "default",
+            "utterance": "Buenos días",
+            "intent": "saludo"
+          },
+          {
+            "domain": "default",
+            "utterance": "Buenas tardes",
+            "intent": "saludo"
+          },
+          {
+            "domain": "default",
+            "utterance": "Buenas noches",
+            "intent": "saludo"
+          },
+          {
+            "domain": "default",
+            "utterance": "hola",
+            "intent": "saludo"
+          },
+          {
+            "domain": "default",
+            "utterance": "Hey mano como estás",
+            "intent": "saludo"
+          },
+          {
+            "domain": "default",
+            "utterance": "Adios",
+            "intent": "despedida"
+          },
+          {
+            "domain": "default",
+            "utterance": "Hasta mañana",
+            "intent": "despedida"
+          },
+          {
+            "domain": "default",
+            "utterance": "Que estés bien",
+            "intent": "despedida"
+          },
+          {
+            "domain": "default",
+            "utterance": "Feliz día",
+            "intent": "despedida"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "es",
+              "tag": "nlu-es",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "buen": 1,
+              "dia": 1,
+              "tard": 1,
+              "noch": 1,
+              "hol": 1,
+              "hey": 1,
+              "man": 1,
+              "como": 1,
+              "esta": 1,
+              "adi": 1,
+              "hast": 1,
+              "manan": 1,
+              "que": 1,
+              "estar": 1,
+              "bien": 1,
+              "feliz": 1
+            },
+            "intents": {
+              "saludo": 1,
+              "despedida": 1
+            },
+            "intentFeatures": {
+              "saludo": {
+                "buen": 1,
+                "dia": 1,
+                "tard": 1,
+                "noch": 1,
+                "hol": 1,
+                "hey": 1,
+                "man": 1,
+                "como": 1,
+                "esta": 1
+              },
+              "despedida": {
+                "adi": 1,
+                "hast": 1,
+                "manan": 1,
+                "que": 1,
+                "estar": 1,
+                "bien": 1,
+                "feliz": 1,
+                "dia": 1
+              }
+            },
+            "featuresToIntent": {
+              "buen": [
+                "saludo"
+              ],
+              "dia": [
+                "saludo",
+                "despedida"
+              ],
+              "tard": [
+                "saludo"
+              ],
+              "noch": [
+                "saludo"
+              ],
+              "hol": [
+                "saludo"
+              ],
+              "hey": [
+                "saludo"
+              ],
+              "man": [
+                "saludo"
+              ],
+              "como": [
+                "saludo"
+              ],
+              "esta": [
+                "saludo"
+              ],
+              "adi": [
+                "despedida"
+              ],
+              "hast": [
+                "despedida"
+              ],
+              "manan": [
+                "despedida"
+              ],
+              "que": [
+                "despedida"
+              ],
+              "estar": [
+                "despedida"
+              ],
+              "bien": [
+                "despedida"
+              ],
+              "feliz": [
+                "despedida"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "es",
+                "tag": "nlu-es",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "buen",
+                "dia",
+                "tard",
+                "noch",
+                "hol",
+                "hey",
+                "man",
+                "como",
+                "esta",
+                "adi",
+                "hast",
+                "manan",
+                "que",
+                "estar",
+                "bien",
+                "feliz"
+              ],
+              "intents": [
+                "saludo",
+                "despedida"
+              ],
+              "perceptrons": [
+                [
+                  8.855286598205566,
+                  1.100839376449585,
+                  1.2956488132476807,
+                  1.2989888191223145,
+                  9.888211250305176,
+                  2.515604019165039,
+                  2.515604019165039,
+                  2.515604019165039,
+                  2.515604019165039,
+                  -4.147914886474609,
+                  -2.111405372619629,
+                  -2.111405372619629,
+                  -1.4082648754119873,
+                  -1.4082648754119873,
+                  -1.4082648754119873,
+                  -5.161278247833252,
+                  4.2106764791402735
+                ],
+                [
+                  -6.847576141357422,
+                  1.605455756187439,
+                  -0.5311494469642639,
+                  -0.47462496161460876,
+                  -5.1033244132995605,
+                  -1.313165545463562,
+                  -1.313165545463562,
+                  -1.313165545463562,
+                  -1.313165545463562,
+                  8.893839836120605,
+                  4.5131306648254395,
+                  4.5131306648254395,
+                  3.008556842803955,
+                  3.008556842803955,
+                  3.008556842803955,
+                  7.3713297843933105,
+                  5.262090176069818
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "es",
+        "Buen día"
+      ],
+      [
+        "es",
+        "Buenos días"
+      ],
+      [
+        "es",
+        "Buenas tardes"
+      ],
+      [
+        "es",
+        "Buenas noches"
+      ],
+      [
+        "es",
+        "hola"
+      ],
+      [
+        "es",
+        "Hey mano como estás"
+      ],
+      [
+        "es",
+        "Adios"
+      ],
+      [
+        "es",
+        "Hasta mañana"
+      ],
+      [
+        "es",
+        "Que estés bien"
+      ],
+      [
+        "es",
+        "Feliz día"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "es": {
+        "despedida": [
+          {
+            "answer": "Que te vaya bien"
+          },
+          {
+            "answer": "hasta luego"
+          },
+          {
+            "answer": "te deseo lo mejor"
+          },
+          {
+            "answer": "saludos a tu tía"
+          },
+          {
+            "answer": "Que la pases bueno"
+          }
+        ],
+        "saludo": [
+          {
+            "answer": "Buenos días también"
+          },
+          {
+            "answer": "Cómo va todo"
+          },
+          {
+            "answer": "Que mañana tan bonita"
+          },
+          {
+            "answer": "Hace un buen día hoy"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}
